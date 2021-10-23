@@ -5,6 +5,8 @@ import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,11 +27,30 @@ import com.zhou.common.utils.R;
  * @email 1938790964@qq.com
  * @date 2021-10-23 00:03:19
  */
+//@RefreshScope//动态刷新nacos里配置的值
 @RestController
 @RequestMapping("mymallcoupon/coupon")
 public class CouponController {
     @Autowired
     private CouponService couponService;
+    //测试
+    @RequestMapping("/member/list")
+    public R membercoupons(){
+       CouponEntity couponEntity = new CouponEntity();
+       couponEntity.setCouponName("买一百减十元");
+        return R.ok().put("coupons",Arrays.asList(couponEntity));
+    }
+    //测试
+    @Value("${my.name}")
+    private  String name;
+    @Value("${my.age}")
+    private Integer age;
+    @RequestMapping("/test1")
+    public R test(){
+       return R.ok().put("姓名",name).put("年龄",age);
+
+
+    }
 
     /**
      * 列表

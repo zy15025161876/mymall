@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: mymall-coupon
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      config:
+        file-extension: yaml
+        namespace: ec1686f9-b837-464c-9d85-f025b14a8c49
