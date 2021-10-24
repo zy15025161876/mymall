@@ -39,6 +39,13 @@
             <version>1.18.22</version>
 
         </dependency>
+<!--&lt;!&ndash;        文件上传&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-alicloud-oss</artifactId>-->
+<!--            <version>2.1.0.RELEASE</version>-->
+
+<!--        </dependency>-->
 
         <!--        导入mysql驱动-->
         <dependency>
@@ -61,6 +68,7 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>2.2.5.RELEASE</version>
         </dependency>
     </dependencies>
 

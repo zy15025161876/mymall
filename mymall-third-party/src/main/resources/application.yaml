@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+#      config:
+#        namespace: 08597ba7-bf9c-481e-9f2a-e1074c73fb93
+#        file-extension: yaml
+    alicloud: #阿里云文件上传
+      access-key: LTAI5tJHaeSRX7gDRwYtfDM3
+      secret-key: 1uahUlWL3j3fEJ6em54sSdWUvnuZGz
+      oss:
+        endpoint: oss-cn-chengdu.aliyuncs.com
+        bucket: zy-mymall
+  application:
+    name: mymall-third-party
+
+
+
+
+server:
+  port: 8666
+

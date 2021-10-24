@@ -27,7 +27,7 @@ import com.zhou.common.utils.R;
  * @date 2021-10-22 20:30:37
  */
 @RestController
-@RequestMapping("mymallproduct/category")
+    @RequestMapping("mymallproduct/category")
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
@@ -52,7 +52,7 @@ public class CategoryController {
     public R info(@PathVariable("catId") Long catId){
 		CategoryEntity category = categoryService.getById(catId);
 
-        return R.ok().put("category", category);
+        return R.ok().put("data", category);
     }
 
     /**
@@ -62,6 +62,14 @@ public class CategoryController {
    // @RequiresPermissions("mymallproduct:category:save")
     public R save(@RequestBody CategoryEntity category){
 		categoryService.save(category);
+
+        return R.ok();
+    }
+    //批量修改
+    @RequestMapping("/update/sort")
+    // @RequiresPermissions("mymallproduct:category:update")
+    public R updateSort(@RequestBody CategoryEntity[] category){
+        categoryService.updateBatchById(Arrays.asList(category));
 
         return R.ok();
     }
@@ -79,12 +87,14 @@ public class CategoryController {
 
     /**
      * 删除
+     * @RequestBody 获取请求体，只有post请求有
      */
     @RequestMapping("/delete")
    // @RequiresPermissions("mymallproduct:category:delete")
     public R delete(@RequestBody Long[] catIds){
+        //1、检查当前的菜单是否被其他地方引用
 		categoryService.removeByIds(Arrays.asList(catIds));
-
+        categoryService.removeMenusById(Arrays.asList(catIds));
         return R.ok();
     }
 

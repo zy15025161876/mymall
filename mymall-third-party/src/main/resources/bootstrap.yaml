@@ -1,0 +1,11 @@
+#spring:
+#  application:
+#    name: mymall-third-party
+#  cloud:
+#    nacos:
+#      server-addr: localhost:8848
+#      config:
+#        file-extension: yaml
+#        namespace: 08597ba7-bf9c-481e-9f2a-e1074c73fb93
+#  profiles:
+#    active: dev

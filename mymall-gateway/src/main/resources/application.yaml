@@ -16,12 +16,29 @@ spring:
               - Path=/api/mymallproduct/**
            filters:
                - RewritePath=/api/(?<segment>.*),/$\{segment}
+         - id: third_party_route
+           uri: lb://mymall-third-party
+           predicates:
+             - Path=/api/thridparty/**
+           filters:
+             - RewritePath=/api/thridparty/(?<segment>.*),/$\{segment}
+
          - id: admin_route
            uri: lb://renren-fast
            predicates:
              - Path=/api/**
            filters:
              - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+
+
+#         - id: third_party_route
+#           uri: lb://mymall-third-party
+#           predicates:
+#            - Path=/api/thirdparty/**
+#           filters:
+#             - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
 
 #前端项目，/api
 ##http://localhost:10086/api/captcha.jpg http://localhost:8080/renren-fast/captcha.jpg
