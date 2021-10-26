@@ -21,7 +21,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mymall" target="1.5" />
-      <module name="mymall-common" target="1.5" />
+      <module name="mymall-common" target="8" />
       <module name="mymall-coupon" target="1.8" />
       <module name="mymall-gateway" target="1.8" />
       <module name="mymall-member" target="1.8" />

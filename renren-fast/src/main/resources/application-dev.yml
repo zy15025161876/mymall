@@ -33,7 +33,6 @@ spring:
                     config:
                         multi-statement-allow: true
 
-
 ##多数据源的配置
 #dynamic:
 #  datasource:
@@ -46,4 +45,6 @@ spring:
 #      driver-class-name: org.postgresql.Driver
 #      url: jdbc:postgresql://localhost:5432/renren_security
 #      username: renren
+server:
+    port: 8099
 #      password: 123456

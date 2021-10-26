@@ -23,4 +23,4 @@ server:
   port: 8111
 logging:
   level:
-    com.zhou.mymall: debug
+    com.zhou.mymall.mymallproduct: debug
